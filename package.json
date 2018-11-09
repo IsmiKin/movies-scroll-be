@@ -1,0 +1,26 @@
+{
+  "name": "movies-scroll-be",
+  "version": "1.0.0",
+  "description": "API for movies scroll app",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ismikin/movies-scroll-be.git"
+  },
+  "keywords": [
+    "movies",
+    "api"
+  ],
+  "author": "IsmiKin <ismikin@gmail.com> (http://github.com/ismikin)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ismikin/movies-scroll-be/issues"
+  },
+  "homepage": "https://github.com/ismikin/movies-scroll-be#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
