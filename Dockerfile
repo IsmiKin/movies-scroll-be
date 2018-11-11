@@ -20,7 +20,7 @@ RUN npm install
 COPY . .
 
 # Run tests
-yarn test
+RUN yarn test
 
 EXPOSE 8080
 CMD [ "yarn", "start" ]
