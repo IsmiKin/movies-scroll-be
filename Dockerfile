@@ -1,4 +1,4 @@
-FROM node:8
+FROM mhart/alpine-node
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -25,4 +25,4 @@ COPY . .
 RUN yarn test
 
 EXPOSE 5000
-CMD [ "node", "dist/src/app.js" ]
+CMD [ "yarn", "start" ]

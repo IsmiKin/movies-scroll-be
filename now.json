@@ -1,7 +1,5 @@
 {
-  "type": "npm",
-  "alias": ["movies-scroll-be"],
-  "builds": [
-        { "src": "src/app.js", "use": "@now/node-server" }
-    ]
+  "version": 1,
+  "type": "docker",
+  "alias": ["movies-scroll-be"]
 }
