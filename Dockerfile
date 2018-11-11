@@ -24,5 +24,5 @@ COPY . .
 # Run tests
 RUN yarn test
 
-EXPOSE 443
+EXPOSE 5000
 CMD [ "node", "dist/src/app.js" ]
