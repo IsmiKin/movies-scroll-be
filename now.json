@@ -2,6 +2,6 @@
   "type": "docker",
   "alias": ["movies-scroll-be"],
   "builds": [
-        { "src": "src/*.js", "use": "@now/node-server" }
+        { "src": "dist/src/app.js", "use": "@now/node-server" }
     ]
 }
