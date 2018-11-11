@@ -1,3 +1,4 @@
 {
+  "type": "Dockerfile",
   "alias": ["movies-scroll-be"]
 }
