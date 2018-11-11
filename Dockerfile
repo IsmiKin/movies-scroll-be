@@ -1,4 +1,4 @@
-FROM node:8
+FROM mhart/alpine-node
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -13,6 +13,7 @@ COPY package.json ./
 COPY yarn.lock ./
 
 RUN yarn install
+RUN yarn build
 # If you are building your code for production
 # RUN npm install --only=production
 
@@ -23,5 +24,5 @@ COPY . .
 # Run tests
 RUN yarn test
 
-EXPOSE 443
+EXPOSE 5000
 CMD [ "yarn", "start" ]
