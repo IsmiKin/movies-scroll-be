@@ -1,5 +1,5 @@
 {
-  "type": "docker",
+  "type": "npm",
   "alias": ["movies-scroll-be"],
   "builds": [
         { "src": "src/app.js", "use": "@now/node-server" }
