@@ -23,5 +23,5 @@ COPY . .
 # Run tests
 RUN yarn test
 
-EXPOSE 5000
+EXPOSE 443
 CMD [ "yarn", "start" ]
