@@ -1,5 +1,8 @@
 {
-  "version": 1,
+  "version": 2,
   "type": "npm",
-  "alias": ["movies-scroll-be"]
+  "alias": ["movies-scroll-be"],
+  "builds": [
+    { "src": "*/index.js", "use": "@now/node-server" }
+  ]
 }
