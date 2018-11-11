@@ -19,5 +19,8 @@ RUN npm install
 # Bundle app source
 COPY . .
 
+# Run tests
+yarn test
+
 EXPOSE 8080
 CMD [ "yarn", "start" ]
