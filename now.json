@@ -1,4 +1,10 @@
 {
   "type": "docker",
-  "alias": ["movies-scroll-be"]
+  "alias": ["movies-scroll-be"],
+  "builds": [
+        { "src": "*.js", "use": "@now/node" }
+    ],
+    "routes": [
+     { "src": "/api", "dest": "dist/src/app.js" }
+    ]
 }
