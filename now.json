@@ -1,7 +1,4 @@
 {
   "type": "npm",
-  "alias": ["movies-scroll-be"],
-  "builds": [
-        { "src": "src/*.js", "use": "@now/node" }
-    ]
+  "alias": ["movies-scroll-be"]
 }
