@@ -1,7 +1,7 @@
 FROM node:8
 
 # Create app directory
-WORKDIR /src
+WORKDIR /usr/src/app
 
 # Install yarn
 RUN npm install -g yarn -y
@@ -12,11 +12,12 @@ RUN npm install -g yarn -y
 COPY package.json ./
 COPY yarn.lock ./
 
-RUN npm install
+RUN yarn install
 # If you are building your code for production
 # RUN npm install --only=production
 
 # Bundle app source
+
 COPY . .
 
 # Run tests
