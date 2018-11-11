@@ -22,5 +22,5 @@ COPY . .
 # Run tests
 RUN yarn test
 
-EXPOSE 8080
+EXPOSE 5000
 CMD [ "yarn", "start" ]
