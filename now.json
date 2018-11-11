@@ -1,4 +1,4 @@
 {
-  "type": "npm",
+  "type": "docker",
   "alias": ["movies-scroll-be"]
 }
