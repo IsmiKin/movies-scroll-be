@@ -1,6 +1,9 @@
 const express = require("express")
 const firebaseAdmin = require('firebase-admin')
 
+// now-env loads env variables from now-secrets.json , just for development!
+require('now-env')
+
 let firebaseAccount = require('../firebase-key.json')
 
 firebaseAccount = {
@@ -12,13 +15,13 @@ firebaseAccount = {
   client_x509_cert_url: process.env.FIREBASE_CERT_URL
 }
 
-const app = express()
-
 firebaseAdmin.initializeApp({
   credential: firebaseAdmin.credential.cert(firebaseAccount)
 })
 
 const db = firebaseAdmin.firestore()
+
+const app = express()
 
 app.get("/", (req, res) => {
   return res.status(200).send('pika')
@@ -32,7 +35,7 @@ app.get("/scrolls", (req, res) => {
       })
       return res
         .status(200)
-        .json({scrolls: snapshot.docs.map(doc => doc.data()) })
+        .json({ scrolls: snapshot.docs.map(doc => doc.data()) })
     })
     .catch((err) => {
       return res.status(500).send(`Error getting documents ${err}`)

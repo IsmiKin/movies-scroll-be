@@ -13,6 +13,9 @@ yarn-error.log*
 ## Firebase keys
 movies-scroll*.js
 
+## ZEIT NOW
+now-secrets.json
+
 ## Dev stuff
 .env
 
