@@ -1,10 +1,17 @@
 const express = require("express")
+
 const firebaseAdmin = require('firebase-admin')
+
+const jwt = require('express-jwt');
+const jwtAuthz = require('express-jwt-authz');
+const jwksRsa = require('jwks-rsa');
 
 // now-env loads env variables from now-secrets.json , just for development!
 require('now-env')
 
 let firebaseAccount = require('../firebase-key.json')
+
+const PORT = process.env.PORT || 5000
 
 firebaseAccount = {
   ...firebaseAccount,
@@ -23,11 +30,28 @@ const db = firebaseAdmin.firestore()
 
 const app = express()
 
+const checkJwt = jwt({
+  // Dynamically provide a signing key
+  // based on the kid in the header and
+  // the signing keys provided by the JWKS endpoint.
+  secret: jwksRsa.expressJwtSecret({
+    cache: true,
+    rateLimit: true,
+    jwksRequestsPerMinute: 5,
+    jwksUri: "https://ismikin.eu.auth0.com/.well-known/jwks.json"
+  }),
+
+  // Validate the audience and the issuer.
+  audience: 'https://movies-scroll-be.now.sh',
+  issuer: "https://ismikin.eu.auth0.com/",
+  algorithms: ['RS256']
+})
+
 app.get("/", (req, res) => {
   return res.status(200).send('pika')
 })
 
-app.get("/scrolls", (req, res) => {
+app.get("/scrolls", checkJwt, (req, res) => {
   db.collection('scrolls').get()
     .then((snapshot) => {
       snapshot.forEach((doc) => {
@@ -42,8 +66,8 @@ app.get("/scrolls", (req, res) => {
     })
 })
 
-const server = app.listen(5000, () =>
-  console.log("Starting server on port 5000")
+const server = app.listen(PORT, () =>
+  console.log(`Starting server on port ${PORT}`)
 )
 
 module.exports = server
