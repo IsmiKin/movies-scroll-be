@@ -13,6 +13,9 @@ yarn-error.log*
 ## Firebase keys
 movies-scroll*.js
 
+## Dev stuff
+.env
+
 ### Babel build
 dist
 dist/*
