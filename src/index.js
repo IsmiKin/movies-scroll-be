@@ -1,5 +1,6 @@
 const express = require("express")
 const cors = require('cors')
+const morgan = require('morgan')
 
 const firebaseAdmin = require('firebase-admin')
 
@@ -49,6 +50,7 @@ const checkJwt = jwt({
 })
 
 app.use(cors())
+app.use(morgan('combined'))
 
 app.get("/", (req, res) => {
   return res.status(200).send('pika')
