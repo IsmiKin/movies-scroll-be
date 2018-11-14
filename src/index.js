@@ -1,4 +1,5 @@
 const express = require("express")
+const cors = require('cors')
 
 const firebaseAdmin = require('firebase-admin')
 
@@ -46,6 +47,8 @@ const checkJwt = jwt({
   issuer: "https://ismikin.eu.auth0.com/",
   algorithms: ['RS256']
 })
+
+app.use(cors())
 
 app.get("/", (req, res) => {
   return res.status(200).send('pika')

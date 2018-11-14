@@ -1,12 +1,12 @@
 {
-  "version": 1,
   "type": "npm",
-  "alias": ["movies-scroll-be"],
+  "alias": "movies-scroll-be.now.sh",
   "env": {
     "FIREBASE_PRIVATE_KEY_ID": "@model-scrolls-be-private_key_id",
     "FIREBASE_PRIVATE_KEY": "@model-scrolls-be-private_key",
     "FIREBASE_CLIENT_ID": "@model-scrolls-be-client_id",
     "FIREBASE_CLIENT_EMAIL": "@model-scrolls-be-client_email",
     "FIREBASE_CERT_URL": "@model-scrolls-be-cert_url"
-  }
+  },
+  "public": true
 }
