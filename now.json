@@ -7,7 +7,9 @@
     "FIREBASE_PRIVATE_KEY": "@model-scrolls-be-private_key",
     "FIREBASE_CLIENT_ID": "@model-scrolls-be-client_id",
     "FIREBASE_CLIENT_EMAIL": "@model-scrolls-be-client_email",
-    "FIREBASE_CERT_URL": "@model-scrolls-be-cert_url"
+    "FIREBASE_CERT_URL": "@model-scrolls-be-cert_url",
+    "AUTH0_DOMAIN_AUTH0": "@domain-auth0",
+    "AUTH0_SPA_UI_ID_CLIENT_ID": "spa-ui-client-id-auth0"
   },
   "public": true
 }
