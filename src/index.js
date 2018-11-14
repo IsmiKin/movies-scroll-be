@@ -39,12 +39,12 @@ const checkJwt = jwt({
     cache: true,
     rateLimit: true,
     jwksRequestsPerMinute: 5,
-    jwksUri: "https://ismikin.eu.auth0.com/.well-known/jwks.json"
+    jwksUri: `https://${process.env.AUTH0_DOMAIN_AUTH0}/.well-known/jwks.json`
   }),
 
   // Validate the audience and the issuer.
-  audience: 'https://movies-scroll-be.now.sh',
-  issuer: "https://ismikin.eu.auth0.com/",
+  audience: process.env.SPA_UI_CLIENT_ID,
+  issuer: `https://${process.env.AUTH0_DOMAIN_AUTH0}/`,
   algorithms: ['RS256']
 })
 
