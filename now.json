@@ -2,6 +2,7 @@
   "version": 1,
   "type": "npm",
   "alias": "movies-scroll-be.now.sh",
+  "name": "movies-scroll-be",
   "env": {
     "FIREBASE_PRIVATE_KEY_ID": "@model-scrolls-be-private_key_id",
     "FIREBASE_PRIVATE_KEY": "@model-scrolls-be-private_key",
